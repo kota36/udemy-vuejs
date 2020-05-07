@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<script src="C:\Users\Kota\git\VueStudy\vue.js"></script>
+<div id="app">
+  <h1 :class="classObject">hello</h1> 
+  <button @click="isActive =!isActive">change</button>
+
+  <h1 :class="[{red: isActive}, bg] ">hello</h1>
+</div>
+
+<script>
+  new Vue({
+    el: "#app",
+    data: {
+      isActive: true,
+      color: 'red',
+      bg: 'bg-blue'
+    },
+    computed: {
+      classObject: function() {
+        return{ 
+        red: this.isActive,
+        'bg-blue': !this.isActive
+        }
+      }
+    }
+  });
+</script>
+
+<style>
+  .red{
+    color: red;
+  }
+  .bg-blue {
+    background-color: blue;
+  }
+</style>

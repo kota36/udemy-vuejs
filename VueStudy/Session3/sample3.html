@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<script src="C:\Users\Kota\git\VueStudy\vue.js"></script>
+<div id="app">
+  <button @click="ok = !ok">button</button>
+  <p v-if="ok">If</p>
+  <p v-show="ok">show</p>
+
+  <template v-show="ok">
+    <p>test</p>
+  </template>
+
+</div>
+
+<script>
+  new Vue({
+    el: "#app",
+    data: {
+      ok: true
+    }
+  });
+</script>
+

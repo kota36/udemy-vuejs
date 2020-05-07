@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<script src="C:\Users\Kota\git\VueStudy\vue.js"></script>
+
+
+<div id="app1">
+  <p>{{message}}</p>
+</div>
+
+<div id="app2">
+  <p>{{message}}</p>
+  <button @click="changeMessage1">chnage 1's message</button>
+</div>
+
+<script>
+  var vm1 = new Vue({
+    el: "#app1",
+    data: {
+      message: "1"
+    }
+  });
+
+
+  var vm2 = new Vue({
+    el:"#app2",
+    data: {
+      message: "2"
+    },
+    methods: {
+      changeMessage1: function() {
+        vm1.message = "from 2"
+      }
+    }
+  })
+</script>
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<script src="C:\Users\Kota\git\VueStudy\vue.js"></script>
+<div id="app">
+  <p>{{counter}}</p>
+  <button @click="counter +=1">+1</button>
+  <p>{{otherCounter}}</p>
+  <button @click="otherCounter +=1">+1</button>
+  <p>{{lessThanThreeComputed}}</p>
+  <p>{{lessThanThreeMethod()}}</p>
+</div>
+
+<script>
+  new Vue({
+    el: "#app",
+    data: {
+      counter: 0,
+      otherCounter: 0
+    },
+    computed: {
+      lessThanThreeComputed: function(){
+        console.log("computed")
+        return this.counter > 3 ? "Up" : "Down"
+      }
+    },
+    methods: {
+      lessThanThreeMethod: function() {
+        console.log("method")
+        return this.counter > 3 ? "Up" : "Down"
+      }
+    }
+  });
+</script>
+

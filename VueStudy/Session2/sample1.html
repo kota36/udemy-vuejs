@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<script src="C:\Users\Kota\git\VueStudy\vue.js"></script>
+<div id="app">
+  <p>現在{{number}}回</p>
+  <button v-on:click="countUp(3)">countUp</button>
+  <p v-on:mousemove="changeMousePosition($event, 4)">mouse
+  <span v-on:mousemove.stop.prevent>ugokuna</span></p>
+  <a v-on:click.prevent.stop="noEvent" href="https://google.com">google</a>
+  <p>X:{{x}}, Y:{{y}}</p>
+  <input type="text" v-on:keyup.enter="myAlert">
+
+</div>
+
+<script>
+  new Vue({
+    el: "#app",
+    data: {
+      number: 0,
+      x: 0,
+      y: 0
+    },
+    methods: {
+      countUp: function(times) {
+        this.number += 1 * times;
+      },
+      changeMousePosition: function(event, divideNumber) {
+        this.x = event.clientX /divideNumber;
+        this.y = event.clientY /divideNumber;
+      },
+      myAlert(){
+        alert("alert");
+      }
+     }
+  });
+</script>
+

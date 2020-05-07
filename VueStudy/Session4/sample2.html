@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<script src="C:\Users\Kota\git\VueStudy\vue.js"></script>
+<div id="app">
+  <p>{{message}}</p>
+  <p>{{name}}</p>
+  <p>{{myData}}</p>
+  <button @click="message = 'changed2'">nameChange</button>
+</div>
+
+<div id="app2"></div>
+
+<div id="app3"></div>
+
+<script>
+  var vm = new Vue({
+    el: "#app",
+    data: {
+      message: "hello",
+      name: "KM"
+    },
+    computed: {
+      myData: function() {
+        return this.$data
+      }
+    },
+  });
+
+  vm.$mount('#app')
+
+new Vue({
+  data: {
+    name: "km"
+  },
+  template: "<h1>hello {{name}}</h1>"
+}).$mount("#app2")
+
+new Vue({
+  data: {
+    name: "km"
+  },
+  render: function(createElement) {
+    return createElement("h1","hello," + this.name);
+  }
+}).$mount("#app3")
+
+document.createElement
+
+
+</script>
+
+

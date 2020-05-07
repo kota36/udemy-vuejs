@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<script src="C:\Users\Kota\git\VueStudy\vue.js"></script>
+<div id="app">
+  <p>現在{{number}}回</p>
+  <button @[event]="countUp(3)">countUp</button>
+</div>
+
+<script>
+  new Vue({
+    el: "#app",
+    data: {
+      number: 0,
+      event: "click"
+    },
+    methods: {
+      countUp: function(times) {
+        this.number += 1 * times;
+      }
+    }
+  });
+</script>
+
