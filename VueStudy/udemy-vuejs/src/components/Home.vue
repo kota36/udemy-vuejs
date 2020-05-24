@@ -1,9 +1,31 @@
 <template>
+<div>
   <p v-border:solid.round.shadow="{width: '3px', color: 'red'}">Home</p>
+  <h2>{{title | upperCase | lowerCase}}</h2>
+  <p>{{subTitle | lowerCase}}</p>
+  <p>{{number}}</p>
+  <button @click="number++">+1</button>
+  <CountNumber></CountNumber>
+</div>
+
+
 </template>
 
 <script>
+import CountNumber from "./CountNumber.vue";
+import { tokyoNumber} from "@/tokyoNumber";
+
+
 export default {
+  mixins: [tokyoNumber],
+  data() {
+    return {
+      tmpData:"hello",
+    };
+  },
+  components: {
+    CountNumber
+  },
   directives: {
     border(el, binding) {
       el.style.borderStyle = binding.arg;
@@ -18,4 +40,4 @@ export default {
     }
   }
 }
-</script>
+</script>                                           
